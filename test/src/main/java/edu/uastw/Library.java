@@ -6,7 +6,7 @@ import java.util.List;
 public class Library {
     private static Library instance;
     private final List<LibraryItem> libraryItems;
-    private int booksCapacity = 100;
+    private int booksCapacity = 3;
 
     public Library() {
         this.libraryItems = new ArrayList<>();

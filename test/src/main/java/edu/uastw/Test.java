@@ -16,14 +16,21 @@ public class Test {
 
         library.displayLibraryItems();
 
-        LibraryDecorator increasedCapacityLibrary = new IncreaseBooksCapacityDecorator(library, 50);
+        LibraryDecorator increasedCapacityLibrary = new IncreaseBooksCapacityDecorator(library, 1);
         increasedCapacityLibrary.extendedFunctionality();
+
+        library.addLibraryItem(magazine1);
+        library.displayLibraryItems();
 
         System.out.println("Modified books capacity: " + library.getBooksCapacity());
 
-        LibraryDecorator decreasedCapacityLibrary = new DecreaseBooksCapacityDecorator(library, 30);
+        LibraryDecorator decreasedCapacityLibrary = new DecreaseBooksCapacityDecorator(library, 2);
         decreasedCapacityLibrary.extendedFunctionality();
 
         System.out.println("Modified books capacity: " + library.getBooksCapacity());
+        library.displayLibraryItems();
+
+        library.addLibraryItem(magazine1);
+        library.displayLibraryItems();
     }
 }
