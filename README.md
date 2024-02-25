@@ -39,6 +39,7 @@ To run the project:
 3. Run the Test class.
 
 The Test class demonstrates the following functionalities:
+
 - Creation of books and magazines.
 - Adding items to the library.
 - Displaying items in the library.
@@ -47,4 +48,6 @@ The Test class demonstrates the following functionalities:
 
 ## Contributors
 
-- ...
+- Lucas Catolino
+- Santiago Lo Coco
+- Joel Kudiyirickal
