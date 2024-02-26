@@ -14,31 +14,38 @@ The project consists of the following components:
 - **LibraryDecorator:** An abstract class for extending functionality of the Library.
 - **IncreaseBooksCapacityDecorator:** A concrete decorator to increase the books capacity of the Library.
 - **DecreaseBooksCapacityDecorator:** A concrete decorator to decrease the books capacity of the Library.
-- **Test:** Contains the main method to demonstrate the library system.
+- **App:** Contains the main method to demonstrate the library system.
 
 ## Design Patterns Used
 
 - **Builder Pattern:** Used in the LibraryBuilder class to construct the library by adding books and magazines.
 - **Singleton Pattern:** Implemented in the Library class to ensure only one instance of the library exists throughout the application.
 - **Decorator Pattern:** Implemented with LibraryDecorator and its concrete decorators (IncreaseBooksCapacityDecorator and DecreaseBooksCapacityDecorator) to extend the functionality of the Library dynamically.
-- **Iterator Pattern:** Implemented in the Library class to provide a way to iterate over its collection of items.
+- **Iterator Pattern:** Implemented by custom iterators in the Library class to iterate over the collection of items.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- Maven version 3 or higher
-- Java version 11 or higher
+- Maven >= 3
+- Java >= 11
 
 ## Usage
 
-To run the project:
+To run the project, first clone or download the repository to your local machine. Now, you have two options: using an IDE or using the CLI (terminal).
 
-1. Clone or download the repository to your local machine.
-2. Open the project in your preferred Java IDE.
-3. Run the Test class.
+### IDE
 
-The Test class demonstrates the following functionalities:
+1. Open the project in your preferred Java IDE.
+2. Run the `App` class.
+
+### CLI
+
+```sh
+mvn compile exec:java
+```
+
+The `App` class demonstrates the following functionalities:
 
 - Creation of books and magazines.
 - Adding items to the library.
