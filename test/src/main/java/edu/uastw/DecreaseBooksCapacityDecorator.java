@@ -1,6 +1,6 @@
 package edu.uastw;
 
-class DecreaseBooksCapacityDecorator extends LibraryDecorator {
+public class DecreaseBooksCapacityDecorator extends LibraryDecorator {
     private final int reducedCapacity;
 
     public DecreaseBooksCapacityDecorator(Library library, int reducedCapacity) {

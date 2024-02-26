@@ -1,6 +1,6 @@
 package edu.uastw;
 
-interface LibraryItem {
+public interface LibraryItem {
     String getTitle();
     String getOwner();
 }

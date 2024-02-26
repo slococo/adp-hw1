@@ -12,6 +12,11 @@ public class LibraryBuilder {
         return this;
     }
 
+    public LibraryBuilder setBooksCapacity(int booksCapacity) {
+        library.setBooksCapacity(booksCapacity);
+        return this;
+    }
+
     public Library build() {
         return library;
     }
