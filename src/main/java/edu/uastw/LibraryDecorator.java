@@ -1,6 +1,6 @@
 package edu.uastw;
 
-public abstract class LibraryDecorator extends Library {
+public abstract class LibraryDecorator {
     protected Library library;
 
     public LibraryDecorator(Library library) {
