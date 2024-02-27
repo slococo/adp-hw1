@@ -9,6 +9,7 @@ public class Book implements LibraryItem {
         this.author = author;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }
@@ -16,5 +17,10 @@ public class Book implements LibraryItem {
     @Override
     public String getOwner() {
         return author;
+    }
+
+    @Override
+    public ItemType getType() {
+        return ItemType.BOOK;
     }
 }

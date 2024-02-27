@@ -34,11 +34,12 @@ public class App {
         library.iterator().forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
         printSeparator();
 
-        Iterator<LibraryItem> bookIterator = library.customTypeIterator(Library.ItemType.BOOK);
+        Iterator<LibraryItem> bookIterator = library.customTypeIterator(ItemType.BOOK);
         System.out.println("Books available in the library:");
         bookIterator.forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
+        printSeparator();
 
-        Iterator<LibraryItem> magazineIterator = library.customTypeIterator(Library.ItemType.MAGAZINE);
+        Iterator<LibraryItem> magazineIterator = library.customTypeIterator(ItemType.MAGAZINE);
         System.out.println("Magazines available in the library:");
         magazineIterator.forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
     }

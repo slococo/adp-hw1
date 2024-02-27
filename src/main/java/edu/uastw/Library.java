@@ -19,6 +19,7 @@ public class Library implements Iterable<LibraryItem> {
         }
         return instance;
     }
+
     public void setBooksCapacity(int capacity) {
         this.booksCapacity = capacity;
     }
@@ -62,16 +63,10 @@ public class Library implements Iterable<LibraryItem> {
         }
     }
 
-    public enum ItemType {
-        BOOK,
-        MAGAZINE
-    }
-
     public Iterator<LibraryItem> customTypeIterator(ItemType type) {
         List<LibraryItem> itemsOfType = new ArrayList<>();
         for (LibraryItem item : libraryItems) {
-            if ((type == ItemType.BOOK && item instanceof Book) ||
-                    (type == ItemType.MAGAZINE && item instanceof Magazine)) {
+            if (item.getType() == type) {
                 itemsOfType.add(item);
             }
         }

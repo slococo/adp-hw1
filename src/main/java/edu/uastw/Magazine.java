@@ -9,6 +9,7 @@ public class Magazine implements LibraryItem {
         this.publisher = publisher;
     }
 
+    @Override
     public String getTitle() {
         return title;
     }
@@ -16,5 +17,10 @@ public class Magazine implements LibraryItem {
     @Override
     public String getOwner() {
         return publisher;
+    }
+
+    @Override
+    public ItemType getType() {
+        return ItemType.MAGAZINE;
     }
 }
