@@ -9,7 +9,7 @@ public class Library implements Iterable<LibraryItem> {
     private final List<LibraryItem> libraryItems;
     private int booksCapacity = 3;
 
-    public Library() {
+    Library() {
         this.libraryItems = new ArrayList<>();
     }
 
