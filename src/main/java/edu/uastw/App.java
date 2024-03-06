@@ -1,5 +1,14 @@
 package edu.uastw;
 
+import edu.uastw.library.*;
+import edu.uastw.library.decorators.DecreaseBooksCapacityDecorator;
+import edu.uastw.library.decorators.IncreaseBooksCapacityDecorator;
+import edu.uastw.library.decorators.LibraryDecorator;
+import edu.uastw.library.items.Book;
+import edu.uastw.library.items.ItemType;
+import edu.uastw.library.items.LibraryItem;
+import edu.uastw.library.items.Magazine;
+
 import java.util.Iterator;
 
 public class App {

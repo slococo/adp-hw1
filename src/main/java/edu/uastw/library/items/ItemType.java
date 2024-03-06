@@ -1,4 +1,4 @@
-package edu.uastw;
+package edu.uastw.library.items;
 
 public enum ItemType {
     BOOK,

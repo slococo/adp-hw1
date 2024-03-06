@@ -1,4 +1,6 @@
-package edu.uastw;
+package edu.uastw.library;
+
+import edu.uastw.library.items.LibraryItem;
 
 public class LibraryBuilder {
     private final Library library;

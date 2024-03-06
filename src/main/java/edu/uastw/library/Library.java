@@ -1,4 +1,7 @@
-package edu.uastw;
+package edu.uastw.library;
+
+import edu.uastw.library.items.ItemType;
+import edu.uastw.library.items.LibraryItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -46,21 +49,7 @@ public class Library implements Iterable<LibraryItem> {
 
     @Override
     public Iterator<LibraryItem> iterator() {
-        return new LibraryItemIterator();
-    }
-
-    private class LibraryItemIterator implements Iterator<LibraryItem> {
-        private int currentIndex = 0;
-
-        @Override
-        public boolean hasNext() {
-            return currentIndex < booksCapacity;
-        }
-
-        @Override
-        public LibraryItem next() {
-            return libraryItems.get(currentIndex++);
-        }
+        return libraryItems.stream().limit(booksCapacity).iterator();
     }
 
     public Iterator<LibraryItem> customTypeIterator(ItemType type) {

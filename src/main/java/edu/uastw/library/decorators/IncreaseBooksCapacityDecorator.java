@@ -1,4 +1,6 @@
-package edu.uastw;
+package edu.uastw.library.decorators;
+
+import edu.uastw.library.Library;
 
 public class IncreaseBooksCapacityDecorator extends LibraryDecorator {
     private final int additionalCapacity;
