@@ -4,7 +4,7 @@ public class Magazine implements LibraryItem {
     private final String title;
     private final String publisher;
 
-    public Magazine(String title, String publisher) {
+    private Magazine(String title, String publisher) {
         this.title = title;
         this.publisher = publisher;
     }
@@ -22,5 +22,24 @@ public class Magazine implements LibraryItem {
     @Override
     public ItemType getType() {
         return ItemType.MAGAZINE;
+    }
+
+    public static class Builder {
+        private String title;
+        private String publisher;
+
+        public Builder setTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder setPublisher(String publisher) {
+            this.publisher = publisher;
+            return this;
+        }
+
+        public Magazine build() {
+            return new Magazine(title, publisher);
+        }
     }
 }

@@ -1,6 +1,23 @@
 # Library System with Design Patterns
 
+
 This is a simple Java project demonstrating a library system that utilizes various design patterns including builder, singleton, decorator, and iterator.
+
+## Index
+1. [Prerequisites](#prerequisites)
+2. [Overview](#overview)
+3. [Design Patterns Used](#design-patterns-used)
+4. [Resilience Patterns Used](#resilience-patterns-used)
+5. [Usage](#usage)
+6. [Note](#note)
+7. [Contributors](#contributors)
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Maven >= 3
+- Java >= 11
 
 ## Overview
 
@@ -10,7 +27,6 @@ The project consists of the following components:
 - **Magazine:** Represents a magazine in the library.
 - **LibraryItem:** An interface representing items in the library, implemented by both Book and Magazine classes.
 - **Library:** Implements the singleton pattern and represents the library. It manages the collection of items (books and magazines) and supports adding items with a capacity constraint. It also implements the iterator pattern to provide a way to iterate over its items.
-- **LibraryBuilder:** Implements the builder pattern to construct the library by adding books and magazines.
 - **LibraryDecorator:** An abstract class for extending functionality of the Library.
 - **IncreaseBooksCapacityDecorator:** A concrete decorator to increase the books capacity of the Library.
 - **DecreaseBooksCapacityDecorator:** A concrete decorator to decrease the books capacity of the Library.
@@ -18,17 +34,22 @@ The project consists of the following components:
 
 ## Design Patterns Used
 
-- **Builder Pattern:** Used in the LibraryBuilder class to construct the library by adding books and magazines.
+- **Builder Pattern:** Used in the Library, Book and Magazine classes to construct the library, book and magazine respectively.
 - **Singleton Pattern:** Implemented in the Library class to ensure only one instance of the library exists throughout the application.
 - **Decorator Pattern:** Implemented with LibraryDecorator and its concrete decorators (IncreaseBooksCapacityDecorator and DecreaseBooksCapacityDecorator) to extend the functionality of the Library dynamically.
 - **Iterator Pattern:** Implemented by custom iterators in the Library class to iterate over the collection of items.
 
-## Prerequisites
+## Resilience Patterns Used
 
-Before you begin, ensure you have met the following requirements:
+- **Retry Pattern:** The Retry pattern allows the system to automatically retry failed operations with the expectation that they might succeed on subsequent attempts.
 
-- Maven >= 3
-- Java >= 11
+- **Timeout Pattern:** The Timeout pattern sets a maximum time for an operation to complete before it's considered unsuccessful, helping prevent long-running operations from causing delays or blocking resources indefinitely.
+
+- **Rate Limiting Pattern:** The Rate Limiting pattern restricts the number of requests a system can handle within a specified time frame to prevent overload and ensure fair resource allocation.
+
+- **Circuit Breaker Pattern:** The Circuit Breaker pattern helps handle failures gracefully by temporarily blocking requests to a service when it's deemed unavailable or experiencing a high failure rate, thereby preventing cascading failures and conserving resources.
+
+You can modify the parameters related to these resilience patterns from the `App.java` file.
 
 ## Usage
 
