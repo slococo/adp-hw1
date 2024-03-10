@@ -1,5 +1,7 @@
 package edu.uastw.library.items;
 
+import edu.uastw.library.interfaces.LibraryItem;
+
 public class Magazine implements LibraryItem {
     private final String title;
     private final String publisher;

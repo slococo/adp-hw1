@@ -1,4 +1,6 @@
-package edu.uastw.library.items;
+package edu.uastw.library.interfaces;
+
+import edu.uastw.library.items.ItemType;
 
 public interface LibraryItem {
     String getTitle();

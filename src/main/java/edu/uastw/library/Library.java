@@ -2,8 +2,9 @@ package edu.uastw.library;
 
 import edu.uastw.library.exceptions.LibraryClosedException;
 import edu.uastw.library.exceptions.LibraryFullException;
+import edu.uastw.library.interfaces.ExceptionRunnable;
 import edu.uastw.library.items.ItemType;
-import edu.uastw.library.items.LibraryItem;
+import edu.uastw.library.interfaces.LibraryItem;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +16,7 @@ public class Library implements Iterable<LibraryItem> {
     private final List<LibraryItem> libraryItems;
     private int booksCapacity = 3;
 
-    /* Resilience variables */
+    /**** Resilience variables ****/
     private int retryAttempts;
     private double libraryOpenCondition;
     private int timeMultiplier;
@@ -24,7 +25,7 @@ public class Library implements Iterable<LibraryItem> {
     private int timeout;
     private int tokens;
     private int interval;
-    /*************************/
+    /******************************/
     
     private Library() {
         libraryItems = new ArrayList<>();
@@ -49,12 +50,8 @@ public class Library implements Iterable<LibraryItem> {
         return false;
     }
 
-    public interface MyRunnable {
-        void run() throws Exception;
-    }
-
     // Retry method
-    private void performWithRetry(MyRunnable action) throws Exception {
+    private void performWithRetry(ExceptionRunnable action) throws Exception {
         int attempt = 0;
         while (attempt < retryAttempts) {
             System.out.println("Attempt: " + attempt);
