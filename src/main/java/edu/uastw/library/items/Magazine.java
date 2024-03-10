@@ -26,6 +26,11 @@ public class Magazine implements LibraryItem {
         return ItemType.MAGAZINE;
     }
 
+    @Override
+    public String toString() {
+        return defaultToString();
+    }
+
     public static class Builder {
         private String title;
         private String publisher;

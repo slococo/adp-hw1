@@ -26,6 +26,11 @@ public class Book implements LibraryItem {
         return ItemType.BOOK;
     }
 
+    @Override
+    public String toString() {
+        return defaultToString();
+    }
+
     public static class Builder {
         private String title;
         private String author;

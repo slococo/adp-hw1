@@ -107,12 +107,12 @@ public class Library implements Iterable<LibraryItem> {
             try {
                 Thread.sleep(random);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                System.out.println(e.getMessage());
             }
             if (libraryItems.size() > 0) {
                 libraryItems.remove(item);
             } else {
-                System.out.println("Library is full");
+                System.out.println("Library is empty");
             }
         }, timeout);
     }
@@ -137,9 +137,7 @@ public class Library implements Iterable<LibraryItem> {
 
         if (tokens > 0) {
             System.out.println("Items available in the library:");
-            libraryItems.forEach(libraryItem ->
-                    System.out.println(libraryItem.getTitle() + " by " + libraryItem.getOwner())
-            );
+            libraryItems.forEach(System.out::println);
             tokens--;
             lastAccessTime = currentTime;
         } else {

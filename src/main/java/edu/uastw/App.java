@@ -14,10 +14,9 @@ import java.util.Iterator;
 
 @IgnoreCoverage
 public class App {
-
     /***************** Resilience variables *****************/
     private static final int RETRY_ATTEMPTS = 2;
-    private static final double LIBRARY_OPEN_CONDITION = 0.5;
+    private static final double LIBRARY_OPEN_CONDITION = 0;
     private static final int TIME_MULTIPLIER = 3000;
     private static final int RATE_LIMIT = 2;
     private static final int TIMEOUT = 1000;
@@ -57,21 +56,29 @@ public class App {
 
         try {
             library.addLibraryItem(book1);
+            printSeparator();
             library.addLibraryItem(book2);
+            printSeparator();
             library.addLibraryItem(book3);
+            printSeparator();
             library.addLibraryItem(magazine1);
+            printSeparator();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-
+        
+        printSeparator();
         library.displayLibraryItems();
+        printSeparator();
         library.displayLibraryItems();
+        printSeparator();
         library.displayLibraryItems();
+        printSeparator();
 
         try {
             Thread.sleep(INTERVAL + 5);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
         library.displayLibraryItems();
@@ -79,42 +86,46 @@ public class App {
 
         LibraryDecorator increasedCapacityLibrary = new IncreaseBooksCapacityDecorator(library, 1);
         increasedCapacityLibrary.extendedFunctionality();
+        printSeparator();
 
         try {
 			library.addLibraryItem(magazine1);
 		} catch (Exception e) {
-            System.out.println("Add library item error");
-			e.printStackTrace();
+            System.out.println(e.getMessage());
 		}
         
+        printSeparator();
         library.displayLibraryItems();
         printSeparator();
 
         LibraryDecorator decreasedCapacityLibrary = new DecreaseBooksCapacityDecorator(library, 2);
         decreasedCapacityLibrary.extendedFunctionality();
+        printSeparator();
 
         try {
 			library.addLibraryItem(magazine1);
+            printSeparator();
 		} catch (Exception e) {
-            System.out.println("Add library item error");
-			e.printStackTrace();
+            System.out.println(e.getMessage());
 		}
-        library.iterator().forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
+
+        library.iterator().forEachRemaining(System.out::println);
         printSeparator();
 
         Iterator<LibraryItem> bookIterator = library.customTypeIterator(ItemType.BOOK);
         System.out.println("Books available in the library:");
-        bookIterator.forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
+        bookIterator.forEachRemaining(System.out::println);
         printSeparator();
 
         Iterator<LibraryItem> magazineIterator = library.customTypeIterator(ItemType.MAGAZINE);
         System.out.println("Magazines available in the library:");
-        magazineIterator.forEachRemaining(x -> System.out.println(x.getTitle() + " by " + x.getOwner()));
+        magazineIterator.forEachRemaining(System.out::println);
+        printSeparator();
 
         try {
             library.removeLibraryItem(book1);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
     }
 
