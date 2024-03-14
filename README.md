@@ -76,7 +76,7 @@ The `App` class demonstrates the following functionalities:
 
 ## Note
 
-In the `./assets/` directory, you can find a UML diagram of the project and the document `adp_hw1.pdf`, which contains a brief description of the application idea and discussions about design decisions and design patterns used.
+In the `./assets/` directory, you can find a UML diagram of the project and the document `adp_hw3.pdf`, which contains a brief description of the application idea and discussions about design decisions and patterns used.
 
 ## Contributors
 
